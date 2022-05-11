@@ -1,0 +1,12 @@
+config BR2_PACKAGE_APK_TOOLS
+	bool "apk-tools"
+	depends on !BR2_STATIC_LIBS # unconditionally shared
+	depends on BR2_TOOLCHAIN_GCC_AT_LEAST_5 # compound literals
+	depends on BR2_USE_MMU # fork()
+	select BR2_PACKAGE_OPENSSL
+	select BR2_PACKAGE_ZLIB
+	help
+	  Alpine Package Keeper (apk) is a package manager developed for
+	  Alpine Linux.
+
+	  https://gitlab.alpinelinux.org/alpine/apk-tools
