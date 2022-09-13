@@ -1,0 +1,20 @@
+config BR2_PACKAGE_OPEN_ISNS
+	bool "open-isns (libisns)"
+	depends on BR2_USE_MMU # fork()
+	help
+	  iSNS server and client for Linux.
+
+	  Note that this option only installs the libraries, and not the
+	  programs.
+
+	  https://github.com/open-iscsi/open-isns
+
+if BR2_PACKAGE_OPEN_ISNS
+
+config BR2_PACKAGE_OPEN_ISNS_PROGS
+	bool "open-isns programs"
+	help
+	  This option tells open-isns to not only install the libraries,
+	  but also the programs.
+
+endif
